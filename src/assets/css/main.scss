@@ -5,3 +5,19 @@ body{
   color: red;
   user-select: none;
 }
+
+.card{
+  width: 200px;
+  height: 400px;
+  .card__header{
+    width: 200px;
+    height: 100px;
+    background-color: bisque;
+  }
+  .card__body{
+    width: 200px;
+    height: 300px;
+    background-color: aquamarine;
+    background-image: url("assets/img/icon.png");
+  }
+}

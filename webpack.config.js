@@ -5,6 +5,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 
@@ -21,6 +22,18 @@ module.exports = {
                     'postcss-loader',
                     // Compiles Sass to CSS
                     'sass-loader',
+                ],
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            disable: true, // webpack@2.x and newer
+                        },
+                    },
                 ],
             },
         ],
@@ -63,7 +76,10 @@ module.exports = {
                     autoprefixer()
                 ]
             }
-        })
+        }),
+        new CopyWebpackPlugin([
+            {from:'src/assets/img',to:'assets/img'}
+        ])
     ],
     output: {
         filename: '[name].bundle.js',
