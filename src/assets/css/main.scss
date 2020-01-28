@@ -1,23 +1,68 @@
 @import "variables";
 
+html{
+  font-size: 10px;
+}
 body{
-  background-color: $body-color;
-  color: red;
-  user-select: none;
+  margin: 0;
 }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+//Utility
 
-.card{
-  width: 200px;
-  height: 400px;
-  .card__header{
-    width: 200px;
-    height: 100px;
-    background-color: bisque;
-  }
-  .card__body{
-    width: 200px;
-    height: 300px;
-    background-color: aquamarine;
-    background-image: url("assets/img/icon.png");
+//Utility END
+
+
+//Header
+.header{
+  height: 81px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .header__inner{
+    width: 1257px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__logo{
+      height: 43px;
+      width: 126px;
+      background-image: url("../../assets/img/logo.png");
+      overflow: hidden;
+
+    }
+    .header__nav{
+      width: 767px;
+      display: flex;
+      justify-content: space-around;
+      .header__nav-button{
+        text-decoration: none;
+        font-size: 2.2rem;
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+    }
+    .header__order-call{
+      width: 155px;
+      height: 45px;
+      border-radius: 10px;
+      border: 1px solid #f24841;
+      padding: 15px 0;
+      box-sizing: border-box;
+      text-align: center;
+
+      font-size: 1.4rem;
+      font-family: 'Montserrat', sans-serif;
+    }
   }
 }
+//Header END
+
+
+//Main
+
+//Main END

@@ -8,21 +8,22 @@ const autoprefixer = require("autoprefixer");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-
     module: {
 
         rules: [
             {
+                exclude: /node_modules/,
                 test: /\.s[ac]ss$/i,
-                use: [
+                loader: 'style-loader!css-loader!sass-loader'
+/*                use: [
                     // Creates `style` nodes from JS strings
                     MiniCssExtractPlugin.loader,
                     // Translates CSS into CommonJS
                     'css-loader',
                     'postcss-loader',
                     // Compiles Sass to CSS
-                    'sass-loader',
-                ],
+                    'sass-loader?sourceMap',
+                ],*/
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
@@ -32,9 +33,19 @@ module.exports = {
                         loader: 'image-webpack-loader',
                         options: {
                             disable: true, // webpack@2.x and newer
+                            outputPath: 'images/'
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                loader: 'url-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/'
+                }
+
             },
         ],
     },
@@ -77,9 +88,13 @@ module.exports = {
                 ]
             }
         }),
-        new CopyWebpackPlugin([
-            {from:'src/assets/img',to:'assets/img'}
-        ])
+/*        new CopyWebpackPlugin([
+            {
+                from: 'src/assets/fonts',
+                to: 'dist/assets/fonts',
+                context: 'dist/'
+            },
+        ]),*/
     ],
     output: {
         filename: '[name].bundle.js',
