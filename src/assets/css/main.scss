@@ -12,7 +12,53 @@ body{
   margin: 0;
 }
 //Utility
+.dropdown{
+  position: relative;
+  .dropdown__button{
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    user-select: none;
+    cursor: pointer;
+    color: #0f0f0f;
+  }
+  .dropdown__content{
+    transition: 3s;
+    width: 332px;
+    height: 202px;
+    display: none;
+    position: absolute;
+    transform: translate(-50%);
+    left: 50%;
+    margin-top: 8px;
+    border: 1px solid #f24841;
+    background-color: #f6f7f9;
+    opacity: 0.95;
+    .dropdown__content-button{
+      display: block;
+      width: 100%;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: #0f0f0f;
+      text-decoration: none;
+      user-select: none;
+      cursor: pointer;
+      font-family: "Roboto Condensed";
+      font-size: 2rem;
+      &:hover{
+        background-color: #f24841;
+        color: white;
+      }
+    }
+  }
+  &:hover{
+    .dropdown__content{
+      display: block;
 
+    }
+  }
+}
 //Utility END
 
 
@@ -44,6 +90,9 @@ body{
         text-decoration: none;
         font-size: 2.2rem;
         font-family: 'Roboto Condensed', sans-serif;
+        user-select: none;
+        cursor: pointer;
+        color: #0f0f0f;
       }
     }
     .header__order-call{
@@ -51,12 +100,12 @@ body{
       height: 45px;
       border-radius: 10px;
       border: 1px solid #f24841;
-      padding: 15px 0;
+      padding: 12px 0;
       box-sizing: border-box;
       text-align: center;
-
       font-size: 1.4rem;
       font-family: 'Montserrat', sans-serif;
+      color: #0f0f0f;
     }
   }
 }
