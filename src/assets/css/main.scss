@@ -1,4 +1,3 @@
-@import "variables";
 
 html{
   font-size: 10px;
@@ -83,6 +82,7 @@ body{
     width: 1280px;
     height: 100%;
     margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,10 +94,11 @@ body{
 
     }
     .header__nav{
-      width: 767px;
+      width: 60%;
       height: 100%;
+      padding: 0 10px;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       .header__nav-button{
         height: 100%;
         text-decoration: none;
@@ -108,6 +109,7 @@ body{
         user-select: none;
         cursor: pointer;
         color: #0f0f0f;
+
       }
     }
     .header__order-call{
@@ -136,10 +138,12 @@ body{
   .main__inner{
     width: 1366px;
     margin: 0 auto;
+    @media (max-width: 1366px) {
+      width: 100vw;
+    }
     .promo{
       position: relative;
       width: 100%;
-      height: 150px;
       img{
         position: absolute;
         object-fit: cover;
@@ -147,10 +151,12 @@ body{
         width: 100%;
         height: 637px;
         z-index:-1;
+        @media (max-width: 1366px) {
+          height: 800px;
+        }
       }
       .promo__body{
         position: absolute;
-
         transform: translate(-50%);
         left: 50%;
         width: 1282px;
@@ -187,7 +193,9 @@ body{
             }
           }
         }
-
+        @media (max-width: 1366px) {
+          width: 100%;
+        }
       }
       .promo__footer{
         margin-top: 86px;
@@ -238,6 +246,9 @@ body{
             float: right;
             font-size: 2rem;
           }
+        }
+        @media (max-width: 1366px) {
+          padding: 0 30px;
         }
       }
     }

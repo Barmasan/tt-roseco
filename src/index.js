@@ -3,9 +3,7 @@ import $ from 'jquery';
 global.jQuery = $;
 global.$ = $;
 
-import _ from 'lodash';
 import './assets/css/fonts.scss';
-import './assets/css/variables.scss';
 import './assets/css/main.scss';
 
 $( document ).ready(function() {

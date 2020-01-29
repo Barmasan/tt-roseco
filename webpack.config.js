@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -15,15 +13,6 @@ module.exports = {
                 exclude: /node_modules/,
                 test: /\.s[ac]ss$/i,
                 loader: 'style-loader!css-loader!sass-loader'
-/*                use: [
-                    // Creates `style` nodes from JS strings
-                    MiniCssExtractPlugin.loader,
-                    // Translates CSS into CommonJS
-                    'css-loader',
-                    'postcss-loader',
-                    // Compiles Sass to CSS
-                    'sass-loader?sourceMap',
-                ],*/
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
@@ -37,15 +26,6 @@ module.exports = {
                         },
                     },
                 ],
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
-                loader: 'url-loader',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: 'fonts/'
-                }
-
             },
         ],
     },
@@ -76,9 +56,6 @@ module.exports = {
             port: 3000,
             files: ['./dist/*.html'],
             server: { baseDir: ['dist'] }
-        }),
-        new MiniCssExtractPlugin({
-            filename: "style.css",
         }),
         new webpack.LoaderOptionsPlugin({
             options: {
