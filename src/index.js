@@ -24,8 +24,8 @@ $( document ).ready(function() {
         }
     }
     function slideshowFadeIn() {
-        //$('.promo').css('background-image', 'url(' + images[nextimage++] + ')').fadeIn(500,function(){setTimeout(doSlideshow,4000);});
         $('.promo').prepend($('<img class="slideshowimage" src="'+images[nextimage++]+'" style="display:none">').fadeIn(500,function(){setTimeout(doSlideshow,4000);}));
+        $('.promo__current-slide').html(nextimage);
         if(nextimage>=images.length)
             nextimage=0;
     }

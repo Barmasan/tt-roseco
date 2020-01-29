@@ -13,8 +13,7 @@ body{
 }
 //Utility
 .container{
-  margin: 0 auto;
-  width: 1227px;
+
 }
 .dropdown{
   position: relative;
@@ -23,6 +22,7 @@ body{
     font-size: 2.2rem;
     line-height: 81px;
     font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
     user-select: none;
     cursor: pointer;
     color: #0f0f0f;
@@ -33,12 +33,14 @@ body{
     height: 202px;
     display: none;
     position: absolute;
+    z-index: 3;
     transform: translate(-50%);
     left: 50%;
-    margin-top: -5px;
+    margin-top: -10px;
     border: 1px solid #f24841;
     background-color: #f6f7f9;
     opacity: 0.95;
+
     .dropdown__content-button{
 
       display: block;
@@ -50,7 +52,7 @@ body{
       text-decoration: none;
       user-select: none;
       cursor: pointer;
-      font-family: "Roboto Condensed";
+      font-family: "Roboto Condensed", sans-serif;
       font-size: 2rem;
       &:hover{
         background-color: #f24841;
@@ -74,8 +76,11 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: block;
+  }
   .header__inner{
-    width: 1257px;
+    width: 1280px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -99,6 +104,7 @@ body{
         font-size: 2.2rem;
         line-height: 81px;
         font-family: 'Roboto Condensed', sans-serif;
+        font-weight: bold;
         user-select: none;
         cursor: pointer;
         color: #0f0f0f;
@@ -128,6 +134,8 @@ body{
 //Main
 .main{
   .main__inner{
+    width: 1366px;
+    margin: 0 auto;
     .promo{
       position: relative;
       width: 100%;
@@ -135,13 +143,17 @@ body{
       img{
         position: absolute;
         object-fit: cover;
+        object-position: 50% 50%;
         width: 100%;
-        height: 637px;;
+        height: 637px;
         z-index:-1;
-        filter: brightness(50%);
       }
       .promo__body{
         position: absolute;
+
+        transform: translate(-50%);
+        left: 50%;
+        width: 1282px;
         .promo__inner{
           padding: 0 90px;
           .promo__title{
@@ -188,7 +200,7 @@ body{
           .promo__mail, .promo__phone{
             width: 100%;
             max-width: 177px;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
             display: block;
             text-decoration: none;
             color: white;
@@ -204,19 +216,26 @@ body{
           left: 50%;
         }
         .promo__slider-counter{
+          position: relative;
+          width: 42px;
           margin-top: 32px;
           float: right;
           color: #bababa;
           font-family: Oswald, sans-serif;
           font-weight: bold;
           .promo__current-slide{
+            float: left;
             font-size: 3rem;
+            margin-left: -5px;
           }
           .promo__slide-slash{
+            position: absolute;
+            transform: translate(-50%);
+            left: 50%;
             font-size: 2rem;
-
           }
           .promo__slider-total{
+            float: right;
             font-size: 2rem;
           }
         }
