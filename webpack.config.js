@@ -66,7 +66,6 @@ module.exports = {
         },
     },
     plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Custom template',
             // Load a custom template (lodash by default)
@@ -88,13 +87,16 @@ module.exports = {
                 ]
             }
         }),
-/*        new CopyWebpackPlugin([
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
+        new CopyWebpackPlugin([
             {
-                from: 'src/assets/fonts',
-                to: 'dist/assets/fonts',
-                context: 'dist/'
+                from: 'src/assets/img',
+                to: 'assets/img',
             },
-        ]),*/
+        ]),
     ],
     output: {
         filename: '[name].bundle.js',
